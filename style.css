@@ -375,6 +375,29 @@ footer ul li i {
 }
 
 
+/* Section Pourquoi Nous Choisir */
+.why-choose-us {
+  position: relative; /* Permet de positionner le calque semi-transparent */
+  background-image: url('carte-ado2_620x480px.jpg'); /* Remplacez par votre image */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: white;
+  overflow: hidden; /* Cache tout débordement du calque */
+}
+
+/* Calque semi-transparent */
+.why-choose-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent (ajustez l'opacité si nécessaire) */
+  z-index: 1; /* Place le calque au-dessus de l'image de fond */
+}
+
 /* Contenu de la section */
 .why-choose-us-content {
   position: relative; /* Place le contenu au-dessus du calque */

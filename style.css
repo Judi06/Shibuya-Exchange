@@ -375,16 +375,10 @@ footer ul li i {
 }
 
 
-/* Section Pourquoi Nous Choisir */
-.why-choose-us {
-  background-image: url('carte-ado2_620x480px.jpg'); /* Remplacez par votre image */
-  background-size: cover;
-  background-position: center;
-  padding: 60px 20px;
-  color: white;
-}
-
+/* Contenu de la section */
 .why-choose-us-content {
+  position: relative; /* Place le contenu au-dessus du calque */
+  z-index: 2; /* Assure que le contenu est au-dessus du calque */
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -410,7 +404,7 @@ footer ul li i {
 }
 
 .why-choose-us-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour les cartes */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -438,6 +432,7 @@ footer ul li i {
   font-size: 1em;
   color: #ccc;
 }
+
 
 
 /* Section diaporama en coin */

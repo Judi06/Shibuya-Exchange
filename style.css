@@ -6,7 +6,6 @@ body {
   box-sizing: border-box;
   color: #333;
   background-color: #f4f7f6;
-  overflow-x: hidden;
 }
 
 /* Barre de navigation */
@@ -17,9 +16,8 @@ nav {
   background-color: #2c3e50;
   color: white;
   padding: 15px 5%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 90%;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -29,6 +27,19 @@ nav .logo {
   font-size: 1.5em;
   font-weight: bold;
   color: #3498db;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
 nav .nav-links {
@@ -59,21 +70,6 @@ nav .nav-links a:hover {
   color: #3498db;
 }
 
-/* Menu Hamburger */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-
 /* Header */
 header {
   position: relative;
@@ -84,7 +80,7 @@ header {
   color: white;
   text-align: center;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 header .header-content {
@@ -97,12 +93,12 @@ header .header-content {
 
 header h1 {
   font-size: 2.5em;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 header p {
   font-size: 1.1em;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 header .cta-button {
@@ -154,7 +150,7 @@ header .slideshow img {
 
 .card-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -162,6 +158,7 @@ header .slideshow img {
 .card {
   flex: 1 1 300px;
   min-width: 250px;
+  max-width: 350px;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -217,7 +214,7 @@ header .slideshow img {
 
 .why-choose-us-title h2 {
   font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #3498db;
   text-align: center;
 }
@@ -226,6 +223,7 @@ header .slideshow img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 30px;
 }
 
 .why-choose-us-card {
@@ -261,8 +259,8 @@ header .slideshow img {
 /* Section Avis Clients */
 .testimonials {
   padding: 60px 5%;
-  background-color: #f9f9f9;
   text-align: center;
+  background-color: #f9f9f9;
 }
 
 .testimonials h2 {
@@ -284,11 +282,11 @@ header .slideshow img {
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 350px;
-  text-align: center;
+  flex: 1 1 300px;
+  max-width: 400px;
 }
 
-.rating {
+.testimonial .rating {
   color: #f1c40f;
   margin-bottom: 15px;
 }
@@ -303,7 +301,7 @@ header .slideshow img {
   color: #3498db;
 }
 
-.add-testimonial {
+.leave-review {
   max-width: 600px;
   margin: 0 auto;
   background-color: white;
@@ -312,7 +310,7 @@ header .slideshow img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.add-testimonial h3 {
+.leave-review h3 {
   margin-bottom: 20px;
   color: #2c3e50;
 }
@@ -329,7 +327,6 @@ header .slideshow img {
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
   width: 100%;
   padding: 10px;
@@ -338,28 +335,38 @@ header .slideshow img {
   font-size: 1em;
 }
 
-.add-testimonial button {
+.rating-input {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.rating-input i {
+  font-size: 1.5em;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating-input i.active,
+.rating-input i:hover {
+  color: #f1c40f;
+}
+
+.leave-review button {
   padding: 12px 25px;
   background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 1em;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.add-testimonial button:hover {
+.leave-review button:hover {
   background-color: #2980b9;
-}
-
-#thank-you-message {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #2ecc71;
-  color: white;
-  border-radius: 5px;
-  display: none;
 }
 
 /* Footer */
@@ -377,13 +384,14 @@ footer {
 }
 
 footer .footer-left {
-  width: 100%;
+  flex: 1 1 60%;
+  min-width: 300px;
   margin-bottom: 30px;
 }
 
 footer .footer-right {
-  width: 100%;
-  text-align: left;
+  flex: 1 1 35%;
+  min-width: 250px;
 }
 
 footer h3 {
@@ -499,7 +507,7 @@ footer ul li i {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
 
@@ -511,12 +519,16 @@ footer ul li i {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 0.9em;
+}
+
+.form-content textarea {
+  grid-column: span 2;
 }
 
 .form-content button {
-  width: 100%;
-  padding: 12px;
+  grid-column: span 2;
+  padding: 10px 20px;
   background-color: #3498db;
   color: white;
   border: none;
@@ -539,57 +551,51 @@ footer ul li i {
   color: #333;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  nav .logo {
-    font-size: 1.8em;
-  }
-  
-  nav .nav-links a {
-    font-size: 1.1em;
-  }
-  
-  header h1 {
-    font-size: 3em;
-  }
-  
-  header p {
-    font-size: 1.2em;
-  }
-  
-  .content p {
-    font-size: 1.2em;
-  }
-  
-  footer .footer-left {
-    width: 60%;
-  }
-  
-  footer .footer-right {
-    width: 35%;
-    text-align: right;
-  }
-  
-  .form-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .form-content textarea,
-  .form-content button {
-    grid-column: span 2;
-  }
-  
-  .testimonials-container {
-    justify-content: space-between;
-  }
+/* Message de remerciement */
+.thank-you-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+  text-align: center;
+  max-width: 80%;
 }
 
+.thank-you-message h3 {
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+.thank-you-message p {
+  margin-bottom: 20px;
+}
+
+.thank-you-message button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  nav {
+    padding: 15px 5%;
+  }
+  
   .hamburger {
     display: block;
   }
   
-  nav .nav-links {
+  .nav-links {
     position: fixed;
     top: 70px;
     left: 0;
@@ -599,72 +605,74 @@ footer ul li i {
     align-items: center;
     padding: 20px 0;
     clip-path: circle(0px at 90% -10%);
-    -webkit-clip-path: circle(0px at 90% -10%);
     transition: all 0.5s ease-out;
     pointer-events: none;
   }
   
-  nav .nav-links.open {
+  .nav-links.active {
     clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
     pointer-events: all;
   }
   
-  nav .nav-links li {
+  .nav-links li {
     margin: 15px 0;
-  }
-  
-  .hamburger.active .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  
-  .hamburger.active .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active .line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  
-  header .header-content {
-    padding: 20px;
   }
   
   header h1 {
     font-size: 2em;
   }
   
-  .why-choose-us-title h2 {
-    font-size: 1.8em;
+  header p {
+    font-size: 1em;
   }
   
-  .why-choose-us-card h3 {
-    font-size: 1.2em;
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-content textarea,
+  .form-content button {
+    grid-column: span 1;
+  }
+  
+  .why-choose-us-title {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .why-choose-us-cards {
+    width: 100%;
+  }
+  
+  footer {
+    flex-direction: column;
+  }
+  
+  footer .footer-left,
+  footer .footer-right {
+    width: 100%;
+    text-align: center;
+  }
+  
+  footer ul li {
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8em;
+  header .header-content {
+    padding: 20px;
   }
   
-  header p {
-    font-size: 1em;
+  header h1 {
+    font-size: 1.8em;
   }
   
   .card {
     min-width: 100%;
   }
   
-  .why-choose-us-title h2 {
-    font-size: 1.5em;
-  }
-  
-  .testimonial {
-    padding: 20px;
-  }
-  
-  .add-testimonial {
-    padding: 20px;
+  .form-content {
+    padding: 20px 15px;
   }
 }

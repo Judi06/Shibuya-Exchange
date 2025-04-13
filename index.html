@@ -102,7 +102,7 @@
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <p>"Service rapide et efficace. J'ai pu vérifier mes coupons en quelques minutes seulement."</p>
+        <p>"Service rapide et efficace. J'ai pu vérifier mes coupons en quelques secondes seulement!"</p>
         <span>- Jean D.</span>
       </div>
       <div class="testimonial">
@@ -118,33 +118,33 @@
       </div>
     </div>
     
-    <div class="add-testimonial">
+    <div class="leave-review">
       <h3>Laissez votre avis</h3>
-      <form id="testimonial-form">
+      <form id="review-form">
         <div class="form-group">
-          <label for="name">Nom (optionnel)</label>
-          <input type="text" id="name" placeholder="Votre nom">
+          <label for="review-name">Nom</label>
+          <input type="text" id="review-name" required>
         </div>
         <div class="form-group">
-          <label for="rating">Note</label>
-          <select id="rating" required>
-            <option value="" disabled selected>Sélectionnez une note</option>
-            <option value="5">5 étoiles</option>
-            <option value="4">4 étoiles</option>
-            <option value="3">3 étoiles</option>
-            <option value="2">2 étoiles</option>
-            <option value="1">1 étoile</option>
-          </select>
+          <label for="review-email">Email</label>
+          <input type="email" id="review-email" required>
         </div>
         <div class="form-group">
-          <label for="comment">Commentaire</label>
-          <textarea id="comment" required placeholder="Votre expérience avec nous..."></textarea>
+          <label>Note</label>
+          <div class="rating-input">
+            <i class="far fa-star" data-rating="1"></i>
+            <i class="far fa-star" data-rating="2"></i>
+            <i class="far fa-star" data-rating="3"></i>
+            <i class="far fa-star" data-rating="4"></i>
+            <i class="far fa-star" data-rating="5"></i>
+          </div>
         </div>
-        <button type="submit">Envoyer l'avis</button>
+        <div class="form-group">
+          <label for="review-message">Message</label>
+          <textarea id="review-message" required></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
       </form>
-      <div id="thank-you-message" style="display: none;">
-        <p>Merci pour votre avis ! Nous apprécions votre feedback.</p>
-      </div>
     </div>
   </section>
 

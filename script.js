@@ -17,6 +17,14 @@ function nextSlide() {
 setInterval(nextSlide, 2000); // Change d'image toutes les 2 secondes
 showSlide(currentSlide); // Affiche la première image
 
+// Gestion du menu hamburger
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
 
 // Gestion des modals
 const verifierCouponBtn = document.getElementById('verifier-coupon');
@@ -37,14 +45,20 @@ verifierCouponBtn.addEventListener('click', () => {
 
 statutCouponBtn.addEventListener('click', () => {
   formCouponModal.style.display = 'flex';
+  navLinks.classList.remove('active');
+  hamburger.classList.remove('active');
 });
 
 remboursementBtn.addEventListener('click', () => {
   formRemboursementModal.style.display = 'flex';
+  navLinks.classList.remove('active');
+  hamburger.classList.remove('active');
 });
 
 nousContacterBtn.addEventListener('click', () => {
   formContactModal.style.display = 'flex';
+  navLinks.classList.remove('active');
+  hamburger.classList.remove('active');
 });
 
 // Fermer les modals
@@ -107,3 +121,61 @@ faqQuestions.forEach((question) => {
   });
 });
 
+// Gestion du système d'avis
+const stars = document.querySelectorAll('.rating-input i');
+const reviewForm = document.getElementById('review-form');
+const thankYouMessage = document.createElement('div');
+thankYouMessage.className = 'thank-you-message';
+thankYouMessage.innerHTML = `
+  <h3>Merci pour votre avis !</h3>
+  <p>Votre avis a été enregistré avec succès.</p>
+  <button id="close-thank-you">Fermer</button>
+`;
+document.body.appendChild(thankYouMessage);
+
+let selectedRating = 0;
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const rating = parseInt(star.getAttribute('data-rating'));
+    selectedRating = rating;
+    
+    stars.forEach((s, index) => {
+      if (index < rating) {
+        s.classList.remove('far');
+        s.classList.add('fas', 'active');
+      } else {
+        s.classList.remove('fas', 'active');
+        s.classList.add('far');
+      }
+    });
+  });
+});
+
+reviewForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Ici, vous pourriez envoyer les données à un serveur
+  // Pour cet exemple, nous affichons simplement le message de remerciement
+  thankYouMessage.style.display = 'block';
+  
+  // Réinitialiser le formulaire
+  reviewForm.reset();
+  stars.forEach(star => {
+    star.classList.remove('fas', 'active');
+    star.classList.add('far');
+  });
+  selectedRating = 0;
+});
+
+document.getElementById('close-thank-you').addEventListener('click', () => {
+  thankYouMessage.style.display = 'none';
+});
+
+// Fermer le menu lorsqu'on clique sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
